@@ -76,7 +76,7 @@ public class TodoController {
         todoService.modify(todoDTO);
 
         return Map.of("result", "success");
-        
+
     }
     
 }
