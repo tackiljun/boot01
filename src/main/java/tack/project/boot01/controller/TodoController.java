@@ -34,6 +34,7 @@ public class TodoController {
     public PageResponseDTO<TodoDTO> list() {
 
         return todoService.getList();
+
     }
 
     ///////////////////////////////////////////////////////////////////
@@ -41,6 +42,7 @@ public class TodoController {
     public TodoDTO get(@PathVariable Long tno) {
 
         return todoService.getOne(tno);
+
     }
 
     ///////////////////////////////////////////////////////////////////
@@ -51,6 +53,7 @@ public class TodoController {
         log.info(todoDTO);
 
         return todoService.register(todoDTO);
+
     }
 
     ///////////////////////////////////////////////////////////////////
@@ -60,6 +63,7 @@ public class TodoController {
         todoService.remove(tno);
 
         return Map.of("result", "success");
+
     }
 
     ///////////////////////////////////////////////////////////////////
@@ -72,6 +76,7 @@ public class TodoController {
         todoService.modify(todoDTO);
 
         return Map.of("result", "success");
+        
     }
     
 }
