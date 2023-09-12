@@ -18,8 +18,8 @@ import tack.project.boot01.dto.TodoDTO;
 import tack.project.boot01.repository.TodoRepository;
 
 
-@RequiredArgsConstructor
 @Service
+@RequiredArgsConstructor
 public class TodoServiceImpl implements TodoService {
     
     ////////////////////////////////////////////////////////////////////////////////////
