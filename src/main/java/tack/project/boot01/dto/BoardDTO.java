@@ -18,7 +18,7 @@ import lombok.ToString;
 @AllArgsConstructor
 public class BoardDTO {
 
-    ////////////////////////////////////////////
+    /////////////////////////////////////////////
     private Long bno;
 
     private String title;
@@ -27,7 +27,7 @@ public class BoardDTO {
 
     private String writer;
 
-    ////////////////////////////////////////////
+    /////////////////////////////////////////////
     @JsonFormat(pattern = "yyyy-mm-dd HH:mm:ss")
     private LocalDateTime regDate;
 
