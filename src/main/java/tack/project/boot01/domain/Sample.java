@@ -13,10 +13,10 @@ import lombok.ToString;
 // 스프링부트3버전부터는 자바가 아닌 자카르타로.
 @Entity
 @Table(name = "tbl_sample")
-@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
+@Builder
 @Getter
 public class Sample {
 
