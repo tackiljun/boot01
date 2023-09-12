@@ -10,6 +10,7 @@ import tack.project.boot01.dto.PageResponseDTO;
 @Transactional
 public interface BoardService {
 
+    ///////////////////////////////////////////////////////////////////////////
     PageResponseDTO<BoardListRcntDTO> listRcnt (PageRequestDTO pageRequestDTO);
 
     BoardDTO getOne(Long bno);
