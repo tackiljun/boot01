@@ -129,8 +129,8 @@ public class BoardRepositoryTests {
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////////
-    @Commit
     @Transactional
+    @Commit
     @Test
     public void testModify() {
 
@@ -225,6 +225,7 @@ public class BoardRepositoryTests {
     //////////////////////////////////////////////////////////////////////////////////////////////
     @Test
     public void testReadOne() {
+        
         Long bno = 77L;
 
         BoardReadDTO dto = boardRepository.readOne(bno);
