@@ -15,8 +15,8 @@ import tack.project.boot01.dto.PageResponseDTO;
 import tack.project.boot01.repository.BoardRepository;
 
 
-@Log4j2
 @Service
+@Log4j2
 @RequiredArgsConstructor
 public class BoardServiceImpl implements BoardService {
 
