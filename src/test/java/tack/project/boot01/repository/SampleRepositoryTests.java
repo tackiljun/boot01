@@ -14,6 +14,7 @@ import org.springframework.data.domain.Sort;
 import lombok.extern.log4j.Log4j2;
 import tack.project.boot01.domain.Sample;
 
+
 @SpringBootTest
 @Log4j2
 public class SampleRepositoryTests {
