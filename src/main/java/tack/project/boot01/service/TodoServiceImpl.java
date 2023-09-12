@@ -45,6 +45,7 @@ public class TodoServiceImpl implements TodoService {
 
         // return response;
         return null;
+        
     }
 
     ////////////////////////////////////////////////////////////////////////////////////
@@ -70,6 +71,7 @@ public class TodoServiceImpl implements TodoService {
         TodoDTO dto = modelMapper.map(todo, TodoDTO.class);
 
         return dto;
+
     }
 
     ////////////////////////////////////////////////////////////////////////////////////
@@ -77,6 +79,7 @@ public class TodoServiceImpl implements TodoService {
     public void remove(Long tno) {
         
         todoRepository.deleteById(tno);
+
     }
 
     ////////////////////////////////////////////////////////////////////////////////////
@@ -90,6 +93,7 @@ public class TodoServiceImpl implements TodoService {
         todo.changeTitle(dto.getTitle());
 
         todoRepository.save(todo);
+
     }
 
 }
