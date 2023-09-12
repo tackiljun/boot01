@@ -13,9 +13,10 @@ import tack.project.boot01.domain.Board;
 import tack.project.boot01.dto.BoardReadDTO;
 import tack.project.boot01.repository.search.BoardSearch;
 
+
 public interface BoardRepository extends JpaRepository<Board, Long>, BoardSearch {
 
-    ////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     @Query("select b from Board b where b.bno = :bno")
     BoardReadDTO readOne(@Param("bno") Long bno);
     
