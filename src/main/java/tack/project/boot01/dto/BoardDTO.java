@@ -12,10 +12,10 @@ import lombok.ToString;
 
 
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
 @Builder
 @ToString
+@NoArgsConstructor
+@AllArgsConstructor
 public class BoardDTO {
 
     ////////////////////////////////////////////
