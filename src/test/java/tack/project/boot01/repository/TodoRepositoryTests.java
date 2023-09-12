@@ -37,7 +37,7 @@ public class TodoRepositoryTests {
 
         Todo entity = result.orElseThrow();
 
-        log.info("----------ENTITY----------");
+        log.info("=====----------ENTITY----------=====");
         log.info(entity);
 
         TodoDTO dto = modelMapper.map(entity, TodoDTO.class);
