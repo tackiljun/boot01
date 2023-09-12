@@ -47,7 +47,7 @@ public class TodoController {
 
     ///////////////////////////////////////////////////////////////////
     @PostMapping("/")
-    public TodoDTO register( @RequestBody TodoDTO todoDTO) {
+    public TodoDTO register(@RequestBody TodoDTO todoDTO) {
 
         log.info("----------register----------");
         log.info(todoDTO);
@@ -72,7 +72,7 @@ public class TodoController {
         @PathVariable("tno") Long tno, 
         @RequestBody TodoDTO todoDTO) {
 
-        todoDTO.setTno(tno); // 안전장치
+        todoDTO.setTno(tno); // 안전장치.
         todoService.modify(todoDTO);
 
         return Map.of("result", "success");
