@@ -15,10 +15,10 @@ import lombok.ToString;
 
 @Entity
 @Table(name = "tbl_todo2")
-@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
+@Builder
 @Getter
 public class Todo {
 
