@@ -19,10 +19,10 @@ import tack.project.boot01.dto.TodoDTO;
 import tack.project.boot01.service.TodoService;
 
 
+@CrossOrigin
 @RestController
 @RequestMapping("/api/todos")
 @RequiredArgsConstructor
-@CrossOrigin
 @Log4j2
 public class TodoController {
 
