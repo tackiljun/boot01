@@ -14,6 +14,7 @@ import com.querydsl.core.types.Projections;
 import com.querydsl.jpa.JPQLQuery;
 
 import lombok.extern.log4j.Log4j2;
+
 import tack.project.boot01.domain.Board;
 import tack.project.boot01.domain.QBoard;
 import tack.project.boot01.domain.QReply;
