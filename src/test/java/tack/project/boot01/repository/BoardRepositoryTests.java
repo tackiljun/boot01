@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.junit.jupiter.api.Test;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.domain.Page;
@@ -14,7 +15,9 @@ import org.springframework.data.domain.Sort;
 import org.springframework.test.annotation.Commit;
 
 import jakarta.transaction.Transactional;
+
 import lombok.extern.log4j.Log4j2;
+
 import tack.project.boot01.domain.Board;
 import tack.project.boot01.dto.BoardListRcntDTO;
 import tack.project.boot01.dto.BoardReadDTO;
