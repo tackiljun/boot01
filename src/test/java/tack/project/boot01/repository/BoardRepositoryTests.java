@@ -21,6 +21,7 @@ import tack.project.boot01.dto.BoardReadDTO;
 import tack.project.boot01.dto.PageRequestDTO;
 import tack.project.boot01.dto.PageResponseDTO;
 
+
 @SpringBootTest
 @Log4j2
 public class BoardRepositoryTests {
