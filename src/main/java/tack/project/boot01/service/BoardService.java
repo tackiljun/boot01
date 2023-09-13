@@ -1,6 +1,7 @@
 package tack.project.boot01.service;
 
 import jakarta.transaction.Transactional;
+
 import tack.project.boot01.dto.BoardDTO;
 import tack.project.boot01.dto.BoardListRcntDTO;
 import tack.project.boot01.dto.PageRequestDTO;
