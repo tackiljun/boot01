@@ -21,13 +21,16 @@ import tack.project.boot01.dto.BoardListRcntDTO;
 import tack.project.boot01.dto.PageRequestDTO;
 import tack.project.boot01.dto.PageResponseDTO;
 
+
 @Log4j2
 public class BoardSearchImpl extends QuerydslRepositorySupport implements BoardSearch {
 
+    /////////////////////////////////////////////////////////////////////////////////////////////
     public BoardSearchImpl() {
         super(Board.class);
     }
 
+    /////////////////////////////////////////////////////////////////////////////////////////////
     @Override
     public Page<Board> search1(String searchType, String keyword, Pageable pageable) {
         
@@ -42,10 +45,10 @@ public class BoardSearchImpl extends QuerydslRepositorySupport implements BoardS
 
         if(keyword != null && searchType != null) {
 
-            //tc -> [t,c]
+            //tc -> [t,c].
             String[] searchArr = searchType.split("");
 
-            // (  )
+            // (  ).
             BooleanBuilder searchBuilder = new BooleanBuilder();
 
             for (String type : searchArr) {
@@ -56,6 +59,7 @@ public class BoardSearchImpl extends QuerydslRepositorySupport implements BoardS
                 }
             } // end for문.
             query.where(searchBuilder);
+
         }
         query.where(board.bno.goe(0L));
 
@@ -70,6 +74,7 @@ public class BoardSearchImpl extends QuerydslRepositorySupport implements BoardS
         return new PageImpl<>(list, pageable, count);
     }
 
+    /////////////////////////////////////////////////////////////////////////////////////////////
     @Override
     public Page<Object[]> searchWithRcnt(String searchType, String keyword, Pageable pageable) {
         
@@ -81,13 +86,13 @@ public class BoardSearchImpl extends QuerydslRepositorySupport implements BoardS
 
         if(keyword != null && searchType != null) {
 
-            //tc -> [t,c]
+            //tc -> [t,c].
             String[] searchArr = searchType.split("");
 
-            // (  )
+            // (  ).
             BooleanBuilder searchBuilder = new BooleanBuilder();
 
-            for (String type : searchArr) {
+            for(String type : searchArr) {
                 switch(type) {
                     case "t" -> searchBuilder.or(board.title.contains(keyword));
                     case "c" -> searchBuilder.or(board.contents.contains(keyword));
@@ -95,6 +100,7 @@ public class BoardSearchImpl extends QuerydslRepositorySupport implements BoardS
                 }
             } // end for문.
             query.where(searchBuilder);
+
         }
 
         query.groupBy(board);
@@ -119,8 +125,10 @@ public class BoardSearchImpl extends QuerydslRepositorySupport implements BoardS
         log.info("count: " + count);
 
         return new PageImpl<>(arrList, pageable, count);
+
     }
 
+    /////////////////////////////////////////////////////////////////////////////////////////////
     @Override
     public PageResponseDTO<BoardListRcntDTO> searchDTORcnt(PageRequestDTO requestDTO) {
 
@@ -137,13 +145,13 @@ public class BoardSearchImpl extends QuerydslRepositorySupport implements BoardS
 
         if(keyword != null && searchType != null) {
 
-            //tc -> [t,c]
+            //tc -> [t,c].
             String[] searchArr = searchType.split("");
 
-            // (  )
+            // (  ).
             BooleanBuilder searchBuilder = new BooleanBuilder();
 
-            for (String type : searchArr) {
+            for(String type : searchArr) {
                 switch(type) {
                     case "t" -> searchBuilder.or(board.title.contains(keyword));
                     case "c" -> searchBuilder.or(board.contents.contains(keyword));
@@ -151,6 +159,7 @@ public class BoardSearchImpl extends QuerydslRepositorySupport implements BoardS
                 }
             } // end for문.
             query.where(searchBuilder);
+
         }
 
         this.getQuerydsl().applyPagination(pageable, query);
@@ -164,8 +173,7 @@ public class BoardSearchImpl extends QuerydslRepositorySupport implements BoardS
             reply.countDistinct().as("replyCount"),
             board.regDate,
             board.modDate
-            
-            ));
+        ));
 
         List<BoardListRcntDTO> list = listQuery.fetch();
 
@@ -175,6 +183,7 @@ public class BoardSearchImpl extends QuerydslRepositorySupport implements BoardS
         long totalCount = listQuery.fetchCount();
 
         return new PageResponseDTO<>(list, totalCount, requestDTO);
+
     }
     
 }
