@@ -31,7 +31,8 @@ public class BoardRepositoryTests {
     private BoardRepository boardRepository;
 
     //////////////////////////////////////////////////////////////////////////////////////////////
-    @Test  // 시간값 생성 확인.
+    // 시간값 생성 확인.
+    @Test
     public void testInsert() {
 
         for(int i = 0; i < 100; i++) {
@@ -49,7 +50,8 @@ public class BoardRepositoryTests {
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////////
-    @Test  // 조회.
+    // 조회.
+    @Test
     public void testRead() {
 
         Long bno = 1L;
@@ -65,7 +67,8 @@ public class BoardRepositoryTests {
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////////
-    @Test  // 업데이트.
+    // 업데이트.
+    @Test
     public void testUpdate() {
 
         Optional<Board> result = boardRepository.findById(1L);
