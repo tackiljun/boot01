@@ -28,11 +28,8 @@ public class Reply {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long rno;
-
     private String replyText;
-
     private String replyFile;
-
     private String replyer;
 
     ////////////////////////////////////////////////////
