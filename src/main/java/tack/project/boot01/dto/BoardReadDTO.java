@@ -16,6 +16,7 @@ public interface BoardReadDTO {
     @JsonFormat(pattern = "yyyy-mm-dd HH:mm:ss")
     LocalDateTime getRegDate();
 
+    /////////////////////////////////////////////
     @JsonFormat(pattern = "yyyy-mm-dd HH:mm:ss")
     LocalDateTime getModDate();
     
