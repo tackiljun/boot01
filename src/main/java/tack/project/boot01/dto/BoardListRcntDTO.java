@@ -29,6 +29,7 @@ public class BoardListRcntDTO {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime regDate;
 
+    /////////////////////////////////////////////
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime modDate;
     
