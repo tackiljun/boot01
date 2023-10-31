@@ -14,6 +14,7 @@ import lombok.RequiredArgsConstructor;
 @Configuration
 public class SwaggerConfig {
 
+    //////////////////////////////////////
     @Bean
     public GroupedOpenApi chatOpenApi() {
 
