@@ -34,8 +34,8 @@ public class ReplyController {
     ///////////////////////////////////////////////////////////////////////
     @GetMapping("/{bno}/list")
     public PageResponseDTO<ReplyDTO> list(
-        @PathVariable("bno") Long bno, 
-        ReplyPageRequestDTO requestDTO) {
+    @PathVariable("bno") Long bno, 
+    ReplyPageRequestDTO requestDTO) {
 
         log.info("bno....." + bno);
         log.info(requestDTO);
