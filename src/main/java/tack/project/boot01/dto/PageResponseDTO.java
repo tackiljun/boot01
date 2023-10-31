@@ -25,10 +25,10 @@ public class PageResponseDTO<E> {
     //////////////////////////////////////////////////////////////////////////////////////////
     // JPA의 페이지인프리? 와 비슷하다.
     public PageResponseDTO(List<E> dtoList, long totalCount, PageRequestDTO pageRequestDTO) {
+        
         this.dtoList = dtoList;
         this.totalCount = totalCount;
         this.requestDTO = pageRequestDTO;
-
         this.page = pageRequestDTO.getPage();
         this.size = pageRequestDTO.getSize();
 
