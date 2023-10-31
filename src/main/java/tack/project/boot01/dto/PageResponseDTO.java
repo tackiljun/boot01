@@ -25,7 +25,7 @@ public class PageResponseDTO<E> {
     //////////////////////////////////////////////////////////////////////////////////////////
     // JPA의 페이지인프리? 와 비슷하다.
     public PageResponseDTO(List<E> dtoList, long totalCount, PageRequestDTO pageRequestDTO) {
-        
+
         this.dtoList = dtoList;
         this.totalCount = totalCount;
         this.requestDTO = pageRequestDTO;
@@ -42,9 +42,7 @@ public class PageResponseDTO<E> {
         int realEnd = (int) (Math.ceil(totalCount/(double)size));
 
         this.end = tempEnd > realEnd ? realEnd: tempEnd;
-
         this.next = (this.end * this.size) < totalCount;
-
         this.pageNums = IntStream.rangeClosed(start, end).boxed().toList();
 
     }
