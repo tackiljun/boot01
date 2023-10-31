@@ -70,8 +70,8 @@ public class TodoController {
     ///////////////////////////////////////////////////////////////////
     @PutMapping("/{tno}")
     public Map<String, String> update(
-        @PathVariable("tno") Long tno, 
-        @RequestBody TodoDTO todoDTO) {
+    @PathVariable("tno") Long tno, 
+    @RequestBody TodoDTO todoDTO) {
 
         todoDTO.setTno(tno); // 안전장치.
         todoService.modify(todoDTO);
