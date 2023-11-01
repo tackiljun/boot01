@@ -63,6 +63,7 @@ public class BoardRepositoryTests {
         Optional<Board> result = boardRepository.findById(1L);
 
         log.info("====================");
+        
         Board board = result.orElseThrow();
 
         log.info(result.get());
