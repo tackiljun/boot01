@@ -27,12 +27,12 @@ import tack.project.boot01.repository.ReplyRepository;
 @RequiredArgsConstructor
 public class ReplyServiceImpl implements ReplyService {
 
-    ///////////////////////////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////////////////////////////
     private final ReplyRepository replyRepository;
 
     private final ModelMapper modelMapper;
 
-    ///////////////////////////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////////////////////////////
     @Override
     public PageResponseDTO<ReplyDTO> list(ReplyPageRequestDTO requestDTO) {
 
@@ -47,7 +47,7 @@ public class ReplyServiceImpl implements ReplyService {
         }
         
         Pageable pageable = 
-            PageRequest.of(pageNum -1, requestDTO.getSize(), Sort.by("rno").ascending());
+        PageRequest.of(pageNum -1, requestDTO.getSize(), Sort.by("rno").ascending());
 
         Page<Reply> result = replyRepository.listBoard(requestDTO.getBno(), pageable);
 
@@ -55,18 +55,19 @@ public class ReplyServiceImpl implements ReplyService {
         long totalReplyCount = result.getTotalElements();
 
         List<ReplyDTO> dtoList = result.get()
-            .map(en -> modelMapper.map(en, ReplyDTO.class))
-            .collect((Collectors.toList()));
+        .map(en -> modelMapper.map(en, ReplyDTO.class))
+        .collect((Collectors.toList()));
 
         PageResponseDTO<ReplyDTO> responseDTO = 
-            new PageResponseDTO<>(dtoList, totalReplyCount, requestDTO);
+        new PageResponseDTO<>(dtoList, totalReplyCount, requestDTO);
+        
         responseDTO.setPage(pageNum);
 
         return responseDTO;
 
     }
 
-    ///////////////////////////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////////////////////////////
     @Override
     public Long register(ReplyDTO replyDTO) {
 
@@ -81,7 +82,7 @@ public class ReplyServiceImpl implements ReplyService {
 
     }
 
-    ///////////////////////////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////////////////////////////
     @Override
     public ReplyDTO read(Long rno) {
         
@@ -93,7 +94,7 @@ public class ReplyServiceImpl implements ReplyService {
 
     }
 
-    ///////////////////////////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////////////////////////////
     @Override
     public void remove(Long rno) {
         
@@ -108,7 +109,7 @@ public class ReplyServiceImpl implements ReplyService {
 
     }
 
-    ///////////////////////////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////////////////////////////
     @Override
     public void modify(ReplyDTO replyDTO) {
 
