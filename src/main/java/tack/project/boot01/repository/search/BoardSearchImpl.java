@@ -60,12 +60,13 @@ public class BoardSearchImpl extends QuerydslRepositorySupport implements BoardS
             } // end for문.
             query.where(searchBuilder);
         }
-        
+
         query.where(board.bno.goe(0L));
 
         this.getQuerydsl().applyPagination(pageable, query);
 
         List<Board> list = query.fetch();
+        
         long count = query.fetchCount();
 
         log.info(list);
