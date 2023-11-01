@@ -60,6 +60,7 @@ public class BoardSearchImpl extends QuerydslRepositorySupport implements BoardS
             } // end for문.
             query.where(searchBuilder);
         }
+        
         query.where(board.bno.goe(0L));
 
         this.getQuerydsl().applyPagination(pageable, query);
@@ -103,7 +104,7 @@ public class BoardSearchImpl extends QuerydslRepositorySupport implements BoardS
         query.groupBy(board);
 
         JPQLQuery<Tuple> tupleQuery =
-            query.select(board.bno, board.title, board.writer, reply.countDistinct());
+        query.select(board.bno, board.title, board.writer, reply.countDistinct());
 
         this.getQuerydsl().applyPagination(pageable, tupleQuery);    
 
