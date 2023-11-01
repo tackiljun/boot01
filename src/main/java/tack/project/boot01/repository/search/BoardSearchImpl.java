@@ -45,14 +45,13 @@ public class BoardSearchImpl extends QuerydslRepositorySupport implements BoardS
         ////////////////////////////////////////////
 
         if(keyword != null && searchType != null) {
-
             //tc -> [t,c].
             String[] searchArr = searchType.split("");
 
             // (  ).
             BooleanBuilder searchBuilder = new BooleanBuilder();
 
-            for (String type : searchArr) {
+            for(String type : searchArr) {
                 switch(type) {
                     case "t" -> searchBuilder.or(board.title.contains(keyword));
                     case "c" -> searchBuilder.or(board.contents.contains(keyword));
@@ -60,7 +59,6 @@ public class BoardSearchImpl extends QuerydslRepositorySupport implements BoardS
                 }
             } // end for문.
             query.where(searchBuilder);
-
         }
         query.where(board.bno.goe(0L));
 
