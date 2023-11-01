@@ -84,7 +84,6 @@ public class BoardSearchImpl extends QuerydslRepositorySupport implements BoardS
         query.leftJoin(reply).on(reply.board.eq(board));
 
         if(keyword != null && searchType != null) {
-
             //tc -> [t,c].
             String[] searchArr = searchType.split("");
 
@@ -99,7 +98,6 @@ public class BoardSearchImpl extends QuerydslRepositorySupport implements BoardS
                 }
             } // end for문.
             query.where(searchBuilder);
-
         }
 
         query.groupBy(board);
