@@ -66,7 +66,7 @@ public class BoardSearchImpl extends QuerydslRepositorySupport implements BoardS
         this.getQuerydsl().applyPagination(pageable, query);
 
         List<Board> list = query.fetch();
-        
+
         long count = query.fetchCount();
 
         log.info(list);
@@ -113,7 +113,7 @@ public class BoardSearchImpl extends QuerydslRepositorySupport implements BoardS
         List<Tuple> tuples = tupleQuery.fetch();
 
         List<Object[]> arrList = 
-            tuples.stream().map(tuple -> tuple.toArray()).collect(Collectors.toList());
+        tuples.stream().map(tuple -> tuple.toArray()).collect(Collectors.toList());
 
         log.info("---------------2---------------");
         log.info(tuples);
@@ -143,7 +143,6 @@ public class BoardSearchImpl extends QuerydslRepositorySupport implements BoardS
         String searchType = requestDTO.getType();
 
         if(keyword != null && searchType != null) {
-
             //tc -> [t,c].
             String[] searchArr = searchType.split("");
 
@@ -158,7 +157,6 @@ public class BoardSearchImpl extends QuerydslRepositorySupport implements BoardS
                 }
             } // end for문.
             query.where(searchBuilder);
-
         }
 
         this.getQuerydsl().applyPagination(pageable, query);
