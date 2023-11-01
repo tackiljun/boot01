@@ -32,9 +32,10 @@ public class TodoServiceImpl implements TodoService {
     @Override
     public PageResponseDTO<TodoDTO> getList() {
 
-        Pageable pageable = PageRequest
-                            .of(0, 20, Sort.by("tno")
-                            .descending());
+        Pageable pageable = 
+        PageRequest
+        .of(0, 20, Sort.by("tno")
+        .descending());
 
         Page<Todo> result = todoRepository.findAll(pageable);
 
