@@ -143,7 +143,7 @@ public class BoardRepositoryTests {
     public void testModify() {
 
         Long bno = 100L;
-        
+
         String title = "Modified Title 100";
 
         int count = boardRepository.modifyTitle(title, bno);
@@ -170,8 +170,7 @@ public class BoardRepositoryTests {
         Pageable pageable = 
         PageRequest.of(0, 10, Sort.by("bno").descending());
 
-        Page<Board> result = 
-            boardRepository.findByContentsContaining("1", pageable);
+        Page<Board> result = boardRepository.findByContentsContaining("1", pageable);
 
         log.info("====================");
         log.info(result);
