@@ -237,6 +237,7 @@ public class BoardRepositoryTests {
         Long bno = 77L;
 
         BoardReadDTO dto = boardRepository.readOne(bno);
+        
         log.info(dto);
         log.info(dto.getRegDate());
         log.info(dto.getModDate());
