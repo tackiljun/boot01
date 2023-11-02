@@ -143,6 +143,7 @@ public class BoardRepositoryTests {
     public void testModify() {
 
         Long bno = 100L;
+        
         String title = "Modified Title 100";
 
         int count = boardRepository.modifyTitle(title, bno);
