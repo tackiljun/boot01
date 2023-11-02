@@ -199,7 +199,7 @@ public class BoardRepositoryTests {
 
         List<Object[]> result = boardRepository.getListWithRcnt();
 
-        for (Object[] result2 : result) {
+        for(Object[] result2 : result) {
             log.info(Arrays.toString(result2));    
         }
 
