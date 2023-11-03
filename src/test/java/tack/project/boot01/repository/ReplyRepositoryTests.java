@@ -53,7 +53,7 @@ public class ReplyRepositoryTests {
 
         Long[] bnoArr = {99L, 95L, 91L, 85L, 81L};
 
-        for (Long bno : bnoArr) {
+        for(Long bno : bnoArr) {
 
             Board board = Board.builder().bno(bno).build();
 
