@@ -79,7 +79,7 @@ public class SampleRepositoryTests {
     public void testPaging() {
     
         Pageable pageable = PageRequest.of(0, 10, 
-            Sort.by("keyCol").descending());
+        Sort.by("keyCol").descending());
 
         Page<Sample> result =  sampleRepository.findAll(pageable);
 
