@@ -27,7 +27,7 @@ public class SampleRepositoryTests {
 
     //////////////////////////////////////////////////////////////////
     @Test
-    public void test1(){
+    public void test1() {
 
         log.info(sampleRepository.getClass().getName());
 
