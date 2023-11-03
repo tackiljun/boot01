@@ -73,14 +73,14 @@ public class ReplyRepositoryTests {
 
     }
 
-    /////////////////////////////////////////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////////////////////////////////
     @Test
     public void testListBoard() {
 
         Long bno = 99L;
 
         Pageable pageable = 
-            PageRequest.of(0, 10, Sort.by("rno").ascending());
+        PageRequest.of(0, 10, Sort.by("rno").ascending());
 
         Page<Reply> result = replyRepository.listBoard(bno, pageable);
 
@@ -105,7 +105,7 @@ public class ReplyRepositoryTests {
     public void testListLast() {
 
         ReplyPageRequestDTO requestDTO = 
-            ReplyPageRequestDTO.builder().bno(99L).last(true).build();
+        ReplyPageRequestDTO.builder().bno(99L).last(true).build();
 
         //replyService.list(requestDTO);
 
